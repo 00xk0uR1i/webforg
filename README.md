@@ -1,5 +1,9 @@
 # WebForge
 
+<p align="center">
+  <img src="webui/public/logo.svg" alt="WebForge Logo" width="200"/>
+</p>
+
 **Web Exploitation Framework — The Metasploit of Web Application Security**
 
 A comprehensive security assessment platform with CLI, API, and WebUI interfaces for web application penetration testing, vulnerability scanning, exploitation, and reporting.
