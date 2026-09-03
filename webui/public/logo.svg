@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="skullGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#22c55e;stop-opacity:0.05" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#22c55e" flood-opacity="0.4"/>
+    </filter>
+    <filter id="glowFilter">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="180" fill="none" stroke="#22c55e" stroke-width="1" opacity="0.2"/>
+  <circle cx="200" cy="200" r="170" fill="none" stroke="#22c55e" stroke-width="0.5" opacity="0.1"/>
+
+  <!-- Skull outline -->
+  <g filter="url(#shadow)" transform="translate(200,185)">
+    <!-- Cranium -->
+    <ellipse cx="0" cy="-30" rx="75" ry="80" fill="url(#skullGrad)" stroke="url(#glow)" stroke-width="2.5"/>
+
+    <!-- Forehead ridge -->
+    <path d="M-55,-60 Q0,-100 55,-60" fill="none" stroke="#22c55e" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Eye sockets -->
+    <ellipse cx="-28" cy="-20" rx="20" ry="22" fill="#0a0a0a" stroke="#22c55e" stroke-width="2"/>
+    <ellipse cx="28" cy="-20" rx="20" ry="22" fill="#0a0a0a" stroke="#22c55e" stroke-width="2"/>
+
+    <!-- Eye inner glow -->
+    <ellipse cx="-28" cy="-18" rx="8" ry="8" fill="#22c55e" opacity="0.15"/>
+    <ellipse cx="28" cy="-18" rx="8" ry="8" fill="#22c55e" opacity="0.15"/>
+
+    <!-- Nose -->
+    <path d="M-8,10 L0,25 L8,10" fill="none" stroke="#22c55e" stroke-width="2" stroke-linejoin="round"/>
+    <line x1="0" y1="10" x2="0" y2="25" stroke="#22c55e" stroke-width="1" opacity="0.5"/>
+
+    <!-- Cheekbones -->
+    <path d="M-75,-10 Q-80,20 -60,40" fill="none" stroke="#22c55e" stroke-width="1.5" opacity="0.5"/>
+    <path d="M75,-10 Q80,20 60,40" fill="none" stroke="#22c55e" stroke-width="1.5" opacity="0.5"/>
+
+    <!-- Jaw / Maxilla -->
+    <path d="M-55,30 Q-60,50 -45,65" fill="none" stroke="#22c55e" stroke-width="2"/>
+    <path d="M55,30 Q60,50 45,65" fill="none" stroke="#22c55e" stroke-width="2"/>
+
+    <!-- Teeth top row -->
+    <g stroke="#22c55e" stroke-width="1.5" fill="none">
+      <rect x="-40" y="35" width="8" height="12" rx="1" opacity="0.8"/>
+      <rect x="-30" y="33" width="8" height="14" rx="1" opacity="0.8"/>
+      <rect x="-20" y="32" width="8" height="15" rx="1" opacity="0.8"/>
+      <rect x="-10" y="31" width="8" height="16" rx="1" opacity="0.8"/>
+      <rect x="2" y="31" width="8" height="16" rx="1" opacity="0.8"/>
+      <rect x="12" y="32" width="8" height="15" rx="1" opacity="0.8"/>
+      <rect x="22" y="33" width="8" height="14" rx="1" opacity="0.8"/>
+      <rect x="32" y="35" width="8" height="12" rx="1" opacity="0.8"/>
+    </g>
+
+    <!-- Teeth bottom row -->
+    <g stroke="#22c55e" stroke-width="1.5" fill="none">
+      <rect x="-35" y="50" width="7" height="10" rx="1" opacity="0.6"/>
+      <rect x="-25" y="48" width="7" height="12" rx="1" opacity="0.6"/>
+      <rect x="-15" y="47" width="7" height="13" rx="1" opacity="0.6"/>
+      <rect x="-5" y="47" width="7" height="13" rx="1" opacity="0.6"/>
+      <rect x="5" y="47" width="7" height="13" rx="1" opacity="0.6"/>
+      <rect x="15" y="48" width="7" height="12" rx="1" opacity="0.6"/>
+      <rect x="25" y="50" width="7" height="10" rx="1" opacity="0.6"/>
+    </g>
+
+    <!-- Mandible -->
+    <path d="M-45,65 Q-30,80 0,82 Q30,80 45,65" fill="none" stroke="#22c55e" stroke-width="2"/>
+
+    <!-- Temple sutures -->
+    <path d="M-65,-40 L-70,-10" stroke="#22c55e" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+    <path d="M65,-40 L70,-10" stroke="#22c55e" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+
+    <!-- Cross-hatch cracks for detail -->
+    <path d="M-40,-70 L-20,-55" stroke="#22c55e" stroke-width="0.7" opacity="0.25"/>
+    <path d="M40,-70 L20,-55" stroke="#22c55e" stroke-width="0.7" opacity="0.25"/>
+    <path d="M-10,-85 L5,-70" stroke="#22c55e" stroke-width="0.7" opacity="0.2"/>
+    <path d="M10,-85 L-5,-70" stroke="#22c55e" stroke-width="0.7" opacity="0.2"/>
+  </g>
+
+  <!-- Text -->
+  <text x="200" y="320" text-anchor="middle" font-family="monospace" font-size="28" font-weight="bold" fill="#22c55e" filter="url(#glowFilter)" letter-spacing="4">WEBFORGE</text>
+  <text x="200" y="345" text-anchor="middle" font-family="monospace" font-size="10" fill="#22c55e" opacity="0.5" letter-spacing="6">EXPLOITATION FRAMEWORK</text>
+
+  <!-- Circuit lines decoration -->
+  <g stroke="#22c55e" stroke-width="0.5" opacity="0.15">
+    <line x1="50" y1="370" x2="120" y2="370"/>
+    <circle cx="120" cy="370" r="2" fill="#22c55e" opacity="0.3"/>
+    <line x1="280" y1="370" x2="350" y2="370"/>
+    <circle cx="280" cy="370" r="2" fill="#22c55e" opacity="0.3"/>
+    <line x1="30" y1="50" x2="80" y2="50"/>
+    <circle cx="30" cy="50" r="2" fill="#22c55e" opacity="0.3"/>
+    <line x1="320" y1="50" x2="370" y2="50"/>
+    <circle cx="370" cy="50" r="2" fill="#22c55e" opacity="0.3"/>
+  </g>
+</svg>

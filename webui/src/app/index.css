@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes glitch-flash {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes logo-scanline {
+  0% { clip-path: inset(0 0 100% 0); opacity: 0; }
+  30% { opacity: 1; }
+  100% { clip-path: inset(0 0 0 0); opacity: 1; }
+}
+
+@keyframes logo-glow-pulse {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.3)); }
+  50% { filter: drop-shadow(0 0 20px rgba(34, 197, 94, 0.6)); }
+}
+
+.logo-reveal {
+  animation: logo-scanline 1.2s ease-out forwards;
+}
+
+.logo-scanline {
+  animation: logo-glow-pulse 3s ease-in-out infinite 1.2s;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-950 text-gray-100 antialiased;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  html {
+    overscroll-behavior: contain;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  input, button, textarea, select {
+    @apply outline-none;
+  }
+
+  input:focus-visible, textarea:focus-visible, select:focus-visible {
+    @apply ring-2 ring-webforge-500/40 ring-offset-1 ring-offset-gray-950;
+  }
+
+  button:focus-visible {
+    @apply ring-2 ring-webforge-500/40 ring-offset-2 ring-offset-gray-950;
+  }
+}
+
+@layer components {
+  /* Surface layers */
+  .surface-base {
+    @apply bg-gray-900/60 border border-gray-800/40;
+  }
+  .surface-raised {
+    @apply bg-gray-800/60 border border-gray-700/40;
+  }
+  .surface-sunken {
+    @apply bg-gray-950/70 border border-gray-800/30;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply border-t border-gray-800/50;
+  }
+
+  /* Subtle hover state for interactive cards */
+  .card-interactive {
+    @apply transition-all duration-150;
+  }
+  .card-interactive:hover {
+    @apply border-gray-600/60 bg-gray-800/50;
+  }
+
+  /* Monospace output block */
+  .output-block {
+    @apply bg-gray-950/80 border border-gray-800/50 rounded-lg p-3 font-mono text-xs text-gray-300 whitespace-pre-wrap break-all overflow-y-auto;
+  }
+
+  /* Tag / badge pill */
+  .tag {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium leading-none;
+  }
+
+  /* Status dot */
+  .status-dot {
+    @apply w-2 h-2 rounded-full shrink-0;
+  }
+
+  /* Input group label */
+  .input-label {
+    @apply text-xs text-gray-400 mb-1 block font-medium;
+  }
+}

@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+*.log
+
+# TLS certificates / private keys
+certs/
+*.pem
+*.key
+
+# Runtime data & models
+data/
+*.onnx
+
+# WebUI
+node_modules/
+webui/dist/
+webui/node_modules/
+webui/*.local
+
+# Secrets & session data
+creds.db
+*.db
+session
+creds.txt
+pass.md
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Reports / evidence (generated)
+reports/*
+evidence/
+findings/
